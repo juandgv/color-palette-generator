@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Accessible Color Palette Generator</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+
+<body>
+    <div class="container">
+        <h1>Accessible Color Palette Generator</h1>
+        <p class="description">Generate color palettes with accessible contrast for web design.</p>
+
+        <div class="color-inputs">
+            <div class="input-group">
+                <label for="base-color">Base Color (HEX):</label>
+                <input type="color" id="base-color" value="#3498db" aria-label="Select a base color">
+            </div>
+
+            <div class="input-group">
+                <label for="rgb-input">RGB:</label>
+                <input type="text" id="rgb-input" placeholder="R, G, B" aria-label="Enter RGB values">
+            </div>
+
+            <div class="input-group">
+                <label for="hsl-input">HSL:</label>
+                <input type="text" id="hsl-input" placeholder="H, S%, L%" aria-label="Enter HSL values">
+            </div>
+        </div>
+
+        <div class="display-settings">
+            <h2>Display Settings</h2>
+            <div class="settings-grid">
+                <div class="input-group">
+                    <label for="font-family">Font Family:</label>
+                    <select id="font-family" aria-label="Select font family">
+                        <option value="Arial, sans-serif">Arial</option>
+                        <option value="Helvetica, sans-serif">Helvetica</option>
+                        <option value="Verdana, sans-serif">Verdana</option>
+                        <option value="Georgia, serif">Georgia</option>
+                        <option value="Times New Roman, serif">Times New Roman</option>
+                        <option value="Courier New, monospace">Courier New</option>
+                    </select>
+                </div>
+
+                <div class="input-group">
+                    <label for="font-size">Font Size:</label>
+                    <select id="font-size" aria-label="Select font size">
+                        <option value="12px">12px</option>
+                        <option value="14px" selected>14px</option>
+                        <option value="16px">16px</option>
+                        <option value="18px">18px</option>
+                        <option value="20px">20px</option>
+                        <option value="24px">24px</option>
+                    </select>
+                </div>
+
+                <div class="input-group">
+                    <label for="font-weight">Font Weight:</label>
+                    <select id="font-weight" aria-label="Select font weight">
+                        <option value="400">Normal (400)</option>
+                        <option value="500">Medium (500)</option>
+                        <option value="600">Semi Bold (600)</option>
+                        <option value="700">Bold (700)</option>
+                    </select>
+                </div>
+
+                <div class="input-group">
+                    <label for="wcag-standard">WCAG Standard:</label>
+                    <select id="wcag-standard" aria-label="Select WCAG compliance standard">
+                        <option value="AA">AA (Good - 4.5:1 contrast)</option>
+                        <option value="AAA">AAA (Excellent - 7:1 contrast)</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+
+        <div class="text-preview">
+            <h2>Text Preview</h2>
+            <div class="preview-container">
+                <textarea id="text-preview" rows="3"
+                    aria-label="Text preview">The quick brown fox jumps over the lazy dog</textarea>
+            </div>
+        </div>
+
+        <button id="generate-btn" aria-label="Generate new color palette">Generate Palette</button>
+
+        <div id="palette" role="list" aria-label="Generated color palette"></div>
+
+        <div class="theme-toggle">
+            <i class="fas fa-sun light-icon" aria-label="Switch to light mode"></i>
+            <i class="fas fa-moon dark-icon" aria-label="Switch to dark mode"></i>
+        </div>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/tinycolor/1.4.2/tinycolor.min.js"></script>
+    <script src="script.js"></script>
+</body>
+
+</html>
